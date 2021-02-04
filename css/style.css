@@ -8,3 +8,29 @@ body {
 
 .cardMargin {
   margin-bottom: 2rem; }
+
+.card-img-top {
+  height: 190.42px; }
+
+.btn-primary {
+  background: linear-gradient(45deg, #01233f, #9a0606);
+  border-color: #01233f; }
+
+.header {
+  color: #01233f;
+  font-size: 27px;
+  padding: 10px; }
+
+.bigicon {
+  font-size: 35px;
+  color: #01233f;
+  border: #9a0606; }
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media only screen and (max-width: 768px) {
+  .form-group {
+    display: flow-root; } }
