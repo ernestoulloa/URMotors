@@ -5,22 +5,25 @@ function login() {
     }
     var user = document.getElementById('username').value;
     var pass = document.getElementById('password').value;
-    var valid = false;
+    var found = undefined;
     for (var i = 0; i < usuarios.length; i++) {
         var usuarioDBD = usuarios[i];
         if (user === usuarioDBD.email && pass === usuarioDBD.contrasenna) {
-            valid = true;
+            found = usuarioDBD;
             break;
         }
     }
-    if (valid) {
+    if (found) {
         alert(`Bienvenido a URMotors ${user}`);
         $('#staticBackdrop').modal('hide');
         $('#loginBtn').hide();
         var loggedInUser = $('#loggedInUser');
         loggedInUser.text(` ${user}`);
         loggedInUser.removeClass('d-none');
+
+        sessionStorage.setItem('usuariolog', JSON.stringify(found));
     } else {
         alert("Usuario o contraseña incorrectos. Por favor vuelva a intentar");
     }
+
 }
