@@ -9,9 +9,12 @@ function saveCart() {
 
 function eliminar(id) {
     for (let i = 0; i < carrito.length; i++) {
-        let auto = carrito[i];
-        if (auto.id == id) {
-            carrito.splice(i, 1);
+        let item = carrito[i];
+        if (item.auto.id == id) {
+            if (carrito.length === 1)
+                carrito = [];
+            else
+                carrito.splice(i, 1);
             saveCart();
             break;
         }
@@ -33,29 +36,27 @@ function addItem(auto) {
 }
 
 function mostrarCarrito() {
-    if (carrito.length > 0) {
-        $('#badge').text(carrito.length);
-        let cartItemsList = $('#cart-items');
-        let suma = 0;
-        cartItemsList.text('');
-        for (let i = 0; i < carrito.length; i++) {
-            let item = carrito[i];
-            suma += item.auto.price * item.cantidad;
-            let listItem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
+    $('#badge').text(carrito.length);
+    let cartItemsList = $('#cart-items');
+    let suma = 0;
+    cartItemsList.text('');
+    for (let i = 0; i < carrito.length; i++) {
+        let item = carrito[i];
+        suma += item.auto.price * item.cantidad;
+        let listItem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div class="cart-item-name">
                         <i class="fa fa-minus-circle" onclick="eliminar(${item.auto.id})"></i>
                         <h6 class="my-0">${item.auto.brand}-${item.auto.model}-${item.auto.year} x ${item.cantidad}</h6>
                     </div>
                     <span class="text-muted">$${item.auto.price} USD</span>
                 </li>`;
-            cartItemsList.append(listItem);
-        }
-        var totales = `<li class="list-group-item d-flex justify-content-between">
+        cartItemsList.append(listItem);
+    }
+    var totales = `<li class="list-group-item d-flex justify-content-between">
                     <span>Total (USD)</span>
                     <strong>$${suma}</strong>
                 </li>`;
-        cartItemsList.append(totales);
-    }
+    cartItemsList.append(totales);
 }
 
 setInterval(function () {
