@@ -1,10 +1,10 @@
 var autos = [
-    new Auto(1, 'Gol', 2019, 'VW'),
-    new Auto(2, 'Tiguan', 2020, 'VW'),
-    new Auto(3, 'Nivus', 2020, 'VW'),
-    new Auto(4, 'Alto', 2018, 'Susuki'),
-    new Auto(5, 'Baleno', 2019, 'Susuki'),
-    new Auto(6, 'A4', 2019, 'Audi'),
+    new Auto(1, 'Gol', 2020, 'VW', 15470),
+    new Auto(2, 'Tiguan', 2020, 'VW', 39990),
+    new Auto(3, 'Nivus', 2020, 'VW', 26990),
+    new Auto(4, 'Alto', 2020, 'Susuki', 8990),
+    new Auto(5, 'Baleno', 2020, 'Susuki', 17990),
+    new Auto(6, 'A4', 2018, 'Audi', 59800),
 ];
 
 function mostrarCard(auto) {
@@ -12,7 +12,8 @@ function mostrarCard(auto) {
         <img class="card-img-top" src="${auto.image}" alt="Card image cap"> 
         <div class="card-body"> 
         <h5 class="card-title">${auto.mostrarNombre()}</h5> 
-        <p class="card-text">${auto.description}</p> <a href="#" class="btn btn-primary" onclick="mostrar(${auto.id})">Go somewhere</a 
+        <h6>$${auto.price} USD</h6> 
+        <p class="card-text">${auto.description}</p> <a href="#" class="btn btn-primary" onclick="mostrar(${auto.id})">Añadir al carrito</a 
         </div> 
         </div>`;
     $("#cardContainer").append(html);
@@ -26,7 +27,9 @@ function mostrar(id) {
             break;
         }
     }
-    alert(`Has dado click en el ${foundAuto.mostrarNombre()}`);
+    carrito.push(foundAuto);
+    localStorage.setItem('carrito',JSON.stringify(carrito));
+    mostrarCarrito();
 }
 
 $(function () {

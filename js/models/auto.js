@@ -5,12 +5,14 @@ class Auto {
     brand;
     description;
     image;
+    price;
 
-    constructor(id, model, year, brand) {
+    constructor(id, model, year, brand, price) {
         this.id = id;
         this.model = model;
         this.year = year;
         this.brand = brand;
+        this.price = price;
     }
 
     // Metodo, es una funcion especifica para los objetos de la clase Auto
