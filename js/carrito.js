@@ -3,6 +3,17 @@ if (!carrito) {
     carrito = [];
 }
 
+function eliminar(id) {
+    for (let i = 0; i < carrito.length; i++) {
+        let auto = carrito[i];
+        if (auto.id == id) {
+            carrito.splice(i, 1);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            break;
+        }
+    }
+}
+
 function mostrarCarrito() {
     if (carrito.length > 0) {
         $('#badge').text(carrito.length);
@@ -13,7 +24,8 @@ function mostrarCarrito() {
             let auto = carrito[i];
             suma += auto.price;
             let listItem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
+                    <div class="cart-item-name">
+                        <i class="fa fa-minus-circle" onclick="eliminar(${auto.id})"></i>
                         <h6 class="my-0">${auto.brand}-${auto.model}-${auto.year}</h6>
                     </div>
                     <span class="text-muted">$${auto.price} USD</span>
@@ -28,6 +40,6 @@ function mostrarCarrito() {
     }
 }
 
-setInterval(function (){
+setInterval(function () {
     mostrarCarrito();
 }, 1000);

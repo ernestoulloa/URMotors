@@ -34,3 +34,10 @@ body {
 @media only screen and (max-width: 768px) {
   .form-group {
     display: flow-root; } }
+
+.cart-item-name {
+  display: flex;
+  flex-direction: row; }
+  .cart-item-name i {
+    margin-right: 5px;
+    cursor: pointer; }
