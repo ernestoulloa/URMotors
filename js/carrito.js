@@ -3,15 +3,33 @@ if (!carrito) {
     carrito = [];
 }
 
+function saveCart() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
 function eliminar(id) {
     for (let i = 0; i < carrito.length; i++) {
         let auto = carrito[i];
         if (auto.id == id) {
             carrito.splice(i, 1);
-            localStorage.setItem("carrito", JSON.stringify(carrito));
+            saveCart();
             break;
         }
     }
+}
+
+function addItem(auto) {
+    for (let i = 0; i < carrito.length; i++) {
+        let item = carrito[i];
+        if (item.auto.id === auto.id) {
+            item.cantidad += 1;
+            saveCart();
+            return;
+        }
+    }
+    let item = new CartItem(auto, 1);
+    carrito.push(item);
+    saveCart();
 }
 
 function mostrarCarrito() {
@@ -21,14 +39,14 @@ function mostrarCarrito() {
         let suma = 0;
         cartItemsList.text('');
         for (let i = 0; i < carrito.length; i++) {
-            let auto = carrito[i];
-            suma += auto.price;
+            let item = carrito[i];
+            suma += item.auto.price * item.cantidad;
             let listItem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div class="cart-item-name">
-                        <i class="fa fa-minus-circle" onclick="eliminar(${auto.id})"></i>
-                        <h6 class="my-0">${auto.brand}-${auto.model}-${auto.year}</h6>
+                        <i class="fa fa-minus-circle" onclick="eliminar(${item.auto.id})"></i>
+                        <h6 class="my-0">${item.auto.brand}-${item.auto.model}-${item.auto.year} x ${item.cantidad}</h6>
                     </div>
-                    <span class="text-muted">$${auto.price} USD</span>
+                    <span class="text-muted">$${item.auto.price} USD</span>
                 </li>`;
             cartItemsList.append(listItem);
         }

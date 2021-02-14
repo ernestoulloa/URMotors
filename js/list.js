@@ -13,13 +13,13 @@ function mostrarCard(auto) {
         <div class="card-body"> 
         <h5 class="card-title">${auto.mostrarNombre()}</h5> 
         <h6>$${auto.price} USD</h6> 
-        <p class="card-text">${auto.description}</p> <a href="#" class="btn btn-primary" onclick="mostrar(${auto.id})">Añadir al carrito</a 
+        <p class="card-text">${auto.description}</p> <a href="#" class="btn btn-primary" onclick="addToCart(${auto.id})">Añadir al carrito</a 
         </div> 
         </div>`;
     $("#cardContainer").append(html);
 }
 
-function mostrar(id) {
+function addToCart(id) {
     var foundAuto;
     for (var i = 0; i < autos.length; i++) {
         if (autos[i].id === id){
@@ -27,8 +27,7 @@ function mostrar(id) {
             break;
         }
     }
-    carrito.push(foundAuto);
-    localStorage.setItem('carrito',JSON.stringify(carrito));
+    addItem(foundAuto);
     mostrarCarrito();
 }
 
