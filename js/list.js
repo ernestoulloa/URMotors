@@ -1,4 +1,4 @@
-var autos = [
+const autos = [
     new Auto(1, 'Gol', 2020, 'VW', 15470),
     new Auto(2, 'Tiguan', 2020, 'VW', 39990),
     new Auto(3, 'Nivus', 2020, 'VW', 26990),
@@ -8,7 +8,7 @@ var autos = [
 ];
 
 function mostrarCard(auto) {
-    var html = `<div class="card cardMargin" style="width: 18rem;"> 
+    const html = `<div class="card cardMargin" style="width: 18rem;"> 
         <img class="card-img-top" src="${auto.image}" alt="Card image cap"> 
         <div class="card-body"> 
         <h5 class="card-title">${auto.mostrarNombre()}</h5> 
@@ -20,8 +20,8 @@ function mostrarCard(auto) {
 }
 
 function addToCart(id) {
-    var foundAuto;
-    for (var i = 0; i < autos.length; i++) {
+    let foundAuto;
+    for (let i = 0; i < autos.length; i++) {
         if (autos[i].id === id){
             foundAuto = autos[i];
             break;
@@ -32,13 +32,13 @@ function addToCart(id) {
 }
 
 $(function () {
-    for (var position = 0; position < autos.length; position++) {
-        var auto = autos[position];
+    for (let position = 0; position < autos.length; position++) {
+        const auto = autos[position];
         auto.image = `assets/cards/card${auto.id}.jpg`;
         auto.description = 'Some quick example text to build on the card title and make up the bulk of the card\'s content.\n' +
             '\n';
     }
-    for (var i = 0; i < autos.length; i++) {
+    for (let i = 0; i < autos.length; i++) {
         mostrarCard(autos[i]);
     }
 });

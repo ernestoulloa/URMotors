@@ -1,11 +1,11 @@
 function login() {
-    var usuarios = JSON.parse(localStorage.getItem('usuarios'));
+    let usuarios = JSON.parse(localStorage.getItem('usuarios'));
     if (!usuarios) {
         usuarios = [];
     }
-    var user = document.getElementById('username').value;
-    var pass = document.getElementById('password').value;
-    var found = undefined;
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+    let found = undefined;
     for (var i = 0; i < usuarios.length; i++) {
         var usuarioDBD = usuarios[i];
         if (user === usuarioDBD.email && pass === usuarioDBD.contrasenna) {

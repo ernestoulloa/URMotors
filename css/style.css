@@ -1,6 +1,9 @@
 body {
   width: 100%; }
 
+nav {
+  margin-bottom: 2rem; }
+
 .cardCars {
   display: flex;
   justify-content: space-evenly;
