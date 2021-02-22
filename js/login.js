@@ -3,8 +3,8 @@ function login() {
     if (!usuarios) {
         usuarios = [];
     }
-    const user = document.getElementById('username').value;
-    const pass = document.getElementById('password').value;
+    const user = document.getElementById('username').value; // todo cambiar a jquery
+    const pass = document.getElementById('password').value; // todo cambiar a jquery
     let found = undefined;
     for (var i = 0; i < usuarios.length; i++) {
         var usuarioDBD = usuarios[i];
