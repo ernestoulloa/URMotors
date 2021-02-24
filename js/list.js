@@ -2,10 +2,15 @@ const autos = [
     new Auto(1, 'Gol', 2020, 'VW', 15470),
     new Auto(2, 'Tiguan', 2020, 'VW', 39990),
     new Auto(3, 'Nivus', 2020, 'VW', 26990),
-    new Auto(4, 'Alto', 2020, 'Susuki', 8990),
+    new Auto(4, 'Alto', 2019, 'Susuki', 8990),
     new Auto(5, 'Baleno', 2020, 'Susuki', 17990),
     new Auto(6, 'A4', 2018, 'Audi', 59800),
+    new Auto(7,'Bigster', 2021, 'Renault', 60500 ),
+    new Auto(8, 'Yaris', 2021, 'Toyota', 20600),
 ];
+// TODO cambiar la descriotion segun el auto
+
+//TODO animaciones cuando se le click a al img que se amplie con la opcion de cerrar en la x
 
 function mostrarCard(auto) {
     const html = `<div class="card cardMargin" style="width: 18rem;"> 
@@ -17,7 +22,7 @@ function mostrarCard(auto) {
         </div> 
         </div>`;
     $("#cardContainer").append(html);
-}
+} //Todo linea 20 cuando se de click en añadir (una funcion que contenga un model que pregunte si realmente quiere añadir al carrito)
 
 function addToCart(id) {
     let foundAuto;
