@@ -37,7 +37,8 @@ const autos = [
 //TODO esperar por ajax : tener una img oculta que aparezca luego de dar click por un tiempo y luego se oculte
 
 function mostrarCard(auto) {
-    const descritption = auto.description.length > 120 ? auto.description.substring(0, 117) + '...' : auto.description;
+    const readmore = '<a href="views/details.html">...</a>';
+    const descritption = auto.description.length > 120 ? auto.description.substring(0, 117) + readmore : auto.description;
     const html = `<div class="card cardMargin" style="width: 18rem;"> 
         <img class="card-img-top" src="${auto.image}" alt="Card image cap"> 
         <div class="card-body"> 
