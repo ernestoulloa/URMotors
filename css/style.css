@@ -4,6 +4,17 @@ body {
 nav {
   margin-bottom: 2rem; }
 
+#notification-toast {
+  position: absolute;
+  top: 10%;
+  right: 40%;
+  z-index: 50; }
+  #notification-toast .toast-header {
+    justify-content: space-between; }
+    #notification-toast .toast-header img {
+      height: 32px;
+      width: 64px; }
+
 .cardCars {
   display: flex;
   justify-content: space-evenly;

@@ -4,28 +4,46 @@ $secondColor: #9a0606;
 body {
   width: 100%;
 }
+
 nav {
   margin-bottom: 2rem;
 }
 
+#notification-toast {
+  position: absolute;
+  top: 10%;
+  right: 40%;
+  z-index: 50;
+
+  .toast-header {
+    justify-content: space-between;
+
+    img {
+      height: 32px;
+      width: 64px;
+    }
+  }
+}
+
 .cardCars {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   font-style: italic;
 }
 
-.cardMargin{
+.cardMargin {
   margin-bottom: 2rem;
 }
 
-.card-img-top{
+.card-img-top {
   height: 190.42px;
 }
 
-.btn-primary{
+.btn-primary {
   background: linear-gradient(45deg, $primaryColor, $secondColor);
   border-color: $primaryColor;
 }
+
 .header {
   color: $primaryColor;
   font-size: 27px;
@@ -38,7 +56,7 @@ nav {
   border: $secondColor;
 }
 
-.form-group{
+.form-group {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +64,7 @@ nav {
 
 
 @media only screen and (max-width: 768px) {
-  .form-group{
+  .form-group {
     display: flow-root;
 
   }
@@ -56,6 +74,7 @@ nav {
 .cart-item-name {
   display: flex;
   flex-direction: row;
+
   i {
     margin-right: 5px;
     cursor: pointer;

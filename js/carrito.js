@@ -58,7 +58,7 @@ function mostrarCarrito() {
                 </li>`;
     cartItemsList.append(totales);
 }
-
+//TODO cuando de click en eliminar del carrito que aprezca un modal de cofirmacion
 setInterval(function () {
     mostrarCarrito();
 }, 1000);

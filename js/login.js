@@ -14,9 +14,10 @@ function login() {
         }
     }
     if (found) {
-        alert(`Bienvenido a URMotors ${user}`);
+        $('#welcomeuser').text(`Bienvenido ${user}`)
         $('#staticBackdrop').modal('hide');
         $('#loginBtn').hide();
+        $('.toast').toast('show');
         var loggedInUser = $('#loggedInUser');
         loggedInUser.text(` ${user}`);
         loggedInUser.removeClass('d-none');
