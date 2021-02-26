@@ -6,7 +6,7 @@ var img = new Image();
 img.src = '../assets/details/car1.jpg';
 var CanvasXSize = 800;
 var CanvasYSize = 200;
-var speed = 30; //más bajo es más rápido
+var speed = 10; //más bajo es más rápido
 var scale = 1.05;
 var y = -4.5; //desplazamiento vertical
 

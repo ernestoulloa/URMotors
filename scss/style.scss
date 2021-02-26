@@ -71,6 +71,18 @@ nav {
 
 }
 
+#staticBackdrop {
+  .modal-body {
+    #username {
+      margin-left: 2rem;
+    }
+
+    #password {
+      margin-left: 5px;
+    }
+  }
+}
+
 .cart-item-name {
   display: flex;
   flex-direction: row;

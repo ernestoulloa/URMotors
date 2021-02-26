@@ -49,6 +49,12 @@ nav {
   .form-group {
     display: flow-root; } }
 
+#staticBackdrop .modal-body #username {
+  margin-left: 2rem; }
+
+#staticBackdrop .modal-body #password {
+  margin-left: 5px; }
+
 .cart-item-name {
   display: flex;
   flex-direction: row; }
