@@ -37,14 +37,16 @@ const autos = [
 //TODO esperar por ajax : tener una img oculta que aparezca luego de dar click por un tiempo y luego se oculte
 
 function mostrarCard(auto) {
-    const readmore = '<a href="views/details.html">...</a>';
+    const readmore = `<a href="./views/details.html?id=${auto.id}">...</a>`;
     const descritption = auto.description.length > 120 ? auto.description.substring(0, 117) + readmore : auto.description;
     const html = `<div class="card cardMargin" style="width: 18rem;"> 
         <img class="card-img-top" src="${auto.image}" alt="Card image cap"> 
         <div class="card-body"> 
-        <h5 class="card-title">${auto.mostrarNombre()}</h5> 
+        <h5 class="card-title">
+                <a href="./views/details.html?id=${auto.id}" >${auto.mostrarNombre()}</a> 
+        </h5> 
         <h6>$${auto.price} USD</h6> 
-        <p class="card-text">${descritption}</p> <a href="#" class="btn btn-primary" onclick="addToCart(${auto.id})">Añadir al carrito</a 
+        <p class="card-text">${descritption}</p> <a href="#" class="btn btn-primary" onclick="addToCart(${auto.id})">Añadir al carrito</a> 
         </div> 
         </div>`;
     $("#cardContainer").append(html);
@@ -65,9 +67,9 @@ function addToCart(id) {
 $(function () {
     for (let position = 0; position < autos.length; position++) {
         const auto = autos[position];
-        auto.image = `assets/cards/card${auto.id}.jpg`;
-
+        auto.image = `/assets/cards/card${auto.id}.jpg`;
     }
+    localStorage.setItem('autos', JSON.stringify(autos));
     for (let i = 0; i < autos.length; i++) {
         mostrarCard(autos[i]);
     }
