@@ -67,7 +67,7 @@ function addToCart(id) {
 $(function () {
     for (let position = 0; position < autos.length; position++) {
         const auto = autos[position];
-        auto.image = `/assets/cards/card${auto.id}.jpg`;
+        auto.image = `./assets/cards/card${auto.id}.jpg`;
     }
     localStorage.setItem('autos', JSON.stringify(autos));
     for (let i = 0; i < autos.length; i++) {
