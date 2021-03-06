@@ -3,7 +3,9 @@ function getAuto() {
 
     if (urlParams.has('id')){
         const autoId = Number(urlParams.get('id'));
-       $.get("https://my.api.mockaroo.com/auto.json?key=c50140e0")
+        $.get(`https://my.api.mockaroo.com/auto/${autoId}.json?key=c50140e0`, function (data) {
+            mostrarAuto(new Auto(data));
+        });
     }
 }
 
