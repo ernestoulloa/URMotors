@@ -1,8 +1,12 @@
 $primaryColor: #01233f;
 $secondColor: #9a0606;
+html {
+  height: 100vh;
+}
 
 body {
   width: 100%;
+  height: 100vh;
 }
 
 nav {
@@ -91,4 +95,11 @@ nav {
     margin-right: 5px;
     cursor: pointer;
   }
+}
+
+.incoming {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
