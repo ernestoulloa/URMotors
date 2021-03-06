@@ -14,6 +14,7 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <title>URMotors</title>
+    <script src="../js/global.js"></script>
     <script src="../js/models/auto.js"></script>
     <script src="../js/details.js"></script>
 
@@ -31,10 +32,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../index.html">Inicio <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Historia</a>
+                    <a class="nav-link" href="workingOnIt.html">Historia</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -42,9 +43,9 @@
                         Categorias
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Autos 0Km</a>
-                        <a class="dropdown-item" href="#">Autos de uso</a>
-                        <a class="dropdown-item" href="#">Quiero vender</a>
+                        <a class="dropdown-item" href="workingOnIt.html">Autos 0Km</a>
+                        <a class="dropdown-item" href="workingOnIt.html">Autos de uso</a>
+                        <a class="dropdown-item" href="workingOnIt.html">Quiero vender</a>
                     </div>
                 </li>
             </ul>
@@ -52,6 +53,11 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <i class="fa fa-search fa-lg" aria-hidden="true"></i>
             </form>
+            <button id="loginBtn" class="btn" data-toggle="modal" data-target="#staticBackdrop">
+                <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
+                Iniciar sesion
+            </button>
+            <span id="loggedInUser" class="d-none text-uppercase"></span>
         </div>
     </nav>
 
@@ -62,60 +68,7 @@
         <div data-v-0ddf5d1c="" class="container">
             <div data-v-0ddf5d1c="" class="row">
                 <div data-v-0ddf5d1c="" class="col-lg-8">
-                    <div data-v-0ddf5d1c="" class="row">
-                        <div data-v-0ddf5d1c="" class="col-12">
-                           <!-- <div data-v-036f2bc6="" data-v-0ddf5d1c="" class="carousel-body">
-                                <div data-v-036f2bc6=""
-                                     class="swiper-container gallery-top swiper-container-initialized swiper-container-horizontal">
-                                    <div data-v-036f2bc6="" class="swiper-wrapper">
-                                        <div data-v-036f2bc6="" class="swiper-slide swiper-slide-active"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/780af2ab-a6f4-4d7f-810d-69c6aff4d738.jpeg&quot;); width: 730px; margin-right: 15px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide swiper-slide-next"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/3172dc1c-6e3b-4a7e-9473-a645291f7531.jpeg&quot;); width: 730px; margin-right: 15px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/da4d68ba-4df9-4f65-be92-45fb574e830b.jpeg&quot;); width: 730px; margin-right: 15px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/754598d3-851e-4bca-8dbe-07ac1819e680.jpeg&quot;); width: 730px; margin-right: 15px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/858d967b-5e6a-429d-b00a-93cd2cea972c.jpeg&quot;); width: 730px; margin-right: 15px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/3550e05b-698d-46a3-8cc7-825486e17fd1.jpeg&quot;); width: 730px; margin-right: 15px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/e33e31a9-6f5f-45ef-8fd1-d155b3867163.jpeg&quot;); width: 730px; margin-right: 15px;"></div>
-                                    </div>
-                                    <div data-v-036f2bc6="" class="swiper-button-next swiper-button-white" tabindex="0"
-                                         role="button" aria-label="Next slide" aria-disabled="false"></div>
-                                    <div data-v-036f2bc6=""
-                                         class="swiper-button-prev swiper-button-white swiper-button-disabled"
-                                         tabindex="-1" role="button" aria-label="Previous slide"
-                                         aria-disabled="true"></div>
-                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                </div>
-                                <div data-v-036f2bc6=""
-                                     class="swiper-container gallery-thumbs swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-thumbs">
-                                    <div data-v-036f2bc6="" class="swiper-wrapper">
-                                        <div data-v-036f2bc6=""
-                                             class="swiper-slide swiper-slide-visible swiper-slide-active swiper-slide-thumb-active"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/780af2ab-a6f4-4d7f-810d-69c6aff4d738.jpeg&quot;); width: 93.1429px; margin-right: 13px;"></div>
-                                        <div data-v-036f2bc6=""
-                                             class="swiper-slide swiper-slide-visible swiper-slide-next"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/3172dc1c-6e3b-4a7e-9473-a645291f7531.jpeg&quot;); width: 93.1429px; margin-right: 13px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide swiper-slide-visible"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/da4d68ba-4df9-4f65-be92-45fb574e830b.jpeg&quot;); width: 93.1429px; margin-right: 13px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide swiper-slide-visible"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/754598d3-851e-4bca-8dbe-07ac1819e680.jpeg&quot;); width: 93.1429px; margin-right: 13px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide swiper-slide-visible"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/858d967b-5e6a-429d-b00a-93cd2cea972c.jpeg&quot;); width: 93.1429px; margin-right: 13px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide swiper-slide-visible"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/3550e05b-698d-46a3-8cc7-825486e17fd1.jpeg&quot;); width: 93.1429px; margin-right: 13px;"></div>
-                                        <div data-v-036f2bc6="" class="swiper-slide swiper-slide-visible"
-                                             style="background-image: url(&quot;https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/carone-adv/e33e31a9-6f5f-45ef-8fd1-d155b3867163.jpeg&quot;); width: 93.1429px; margin-right: 13px;"></div>
-                                    </div>
-                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                </div>
-                            </div>-->
-                        </div>
-                    </div>
+
                     <div data-v-0ddf5d1c="" class="row mt-2">
                         <div data-v-0ddf5d1c="" class="col-12"><h5 data-v-0ddf5d1c="">Ficha técnica</h5>
                             <hr data-v-0ddf5d1c="" class="my-4">
@@ -161,5 +114,6 @@
         </div>
     </section>
 </main>
+<div class="overlay"></div>
 </body>
 </html>
