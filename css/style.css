@@ -54,8 +54,8 @@ nav {
   .form-group {
     display: flow-root; } }
 
-#staticBackdrop .modal-body #username {
-  margin-left: 2rem; }
+#staticBackdrop .modal-body #user-label {
+  margin-right: 2rem; }
 
 #staticBackdrop .modal-body #password {
   margin-left: 5px; }
