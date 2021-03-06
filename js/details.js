@@ -3,18 +3,7 @@ function getAuto() {
 
     if (urlParams.has('id')){
         const autoId = Number(urlParams.get('id'));
-        let autos = JSON.parse(localStorage.getItem('autos'));
-        if (!autos) {
-            autos = [];
-        }
-        for (let i = 0; i < autos.length; i++) {
-            const auto = autos[i];
-            if (autoId === auto.id){
-                mostrarAuto(auto);
-                break;
-            }
-
-        }
+       $.get("https://my.api.mockaroo.com/auto.json?key=c50140e0")
     }
 }
 
