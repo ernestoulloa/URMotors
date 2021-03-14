@@ -1,8 +1,4 @@
-// TODO crear vista detalle
-
-//TODO animaciones cuando se le click a al img que se amplie con la opcion de cerrar en la x
-
-//TODO esperar por ajax : tener una img oculta que aparezca luego de dar click por un tiempo y luego se oculte
+let autos;
 
 function mostrarCard(auto) {
     const readmore = `<a href="./views/details.html?id=${auto.id}">...</a>`;
@@ -34,9 +30,10 @@ function addToCart(id) {
 
 $(function () {
     $.get("https://my.api.mockaroo.com/auto.json?key=c50140e0", function (data) {
+        autos = [];
         for (let position = 0; position < data.length; position++) {
             const auto = new Auto(data[position]);
-            // auto.image = `./assets/cards/card${auto.id}.jpg`;
+            autos.push(auto);
             mostrarCard(auto);
         }
     });
