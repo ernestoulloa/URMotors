@@ -10,21 +10,17 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link href="assets/cars.png" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
     <title>URMotors</title>
+    <script src="js/global.js"></script>
     <script src="js/login.js"></script>
     <script src="js/models/auto.js"></script>
     <script src="js/models/cartItem.js"></script>
     <script src="js/carrito.js"></script>
     <script src="js/list.js"></script>
-
-
-
 </head>
 <body>
 <header>
@@ -41,7 +37,7 @@
                     <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Historia</a>
+                    <a class="nav-link" href="views/workingOnIt.html">Historia</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -49,9 +45,9 @@
                         Categorias
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Autos 0Km</a>
-                        <a class="dropdown-item" href="#">Autos de uso</a>
-                        <a class="dropdown-item" href="#">Quiero vender</a>
+                        <a class="dropdown-item" href="views/workingOnIt.html">Autos 0Km</a>
+                        <a class="dropdown-item" href="views/workingOnIt.html">Autos de uso</a>
+                        <a class="dropdown-item" href="views/workingOnIt.html">Quiero vender</a>
                     </div>
                 </li>
             </ul>
@@ -59,12 +55,13 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <i class="fa fa-search fa-lg" aria-hidden="true"></i>
             </form>
+            <button id="loginBtn" class="btn" data-toggle="modal" data-target="#staticBackdrop">
+                <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
+                Iniciar sesion
+            </button>
+            <span id="loggedInUser" class="d-none text-uppercase"></span>
         </div>
-        <button id="loginBtn" class="btn" data-toggle="modal" data-target="#staticBackdrop">
-            <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
-            Iniciar sesion
-        </button>
-        <span id="loggedInUser" class="d-none text-uppercase"></span>
+
     </nav>
 
 </header>
@@ -106,7 +103,7 @@
             </div>
             <div class="modal-body" >
                 <div class="form-group">
-                    <label for="username">Usuario</label>
+                    <label id="user-label" for="username">Usuario</label>
                     <input type="text" name="username" class="form-control" id="username" placeholder="Usuario">
                 </div>
                 <div class="form-group">
@@ -121,6 +118,7 @@
         </div>
     </div>
 </div>
+<div class="overlay"></div>
 
 </body>
 </html>

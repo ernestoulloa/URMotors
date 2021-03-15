@@ -7,13 +7,14 @@ class Auto {
     image;
     price;
 
-    constructor(id, model, year, brand, price, description) {
-        this.id = id;
-        this.model = model;
-        this.year = year;
-        this.brand = brand;
-        this.price = price;
-        this.description = description;
+    constructor(data) {
+        this.id = data.id;
+        this.model = data.model;
+        this.year = data.year;
+        this.image = data.image;
+        this.brand = data.brand;
+        this.price = data.price;
+        this.description = data.description;
     }
 
     // Metodo, es una funcion especifica para los objetos de la clase Auto
